@@ -4,7 +4,7 @@
 authors:
   - shan khan
 
-endpoint: /jobs?page=0&pageSize=20
+endpoint: /jobs?page=0&pageSize=10
 
 method: GET
 
