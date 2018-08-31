@@ -1,0 +1,33 @@
+---
+parent: "api_v1_test-suites_project-id_id_coverage"
+name: "ApiV1TestSuitesProjectIdIdCoverageGetPathParamSqlInjectionTimeboundMysqlId"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/test-suites/project-id/{{@MySQLTimeboundSQLInjections}}/coverage"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@ResponseTime < 7000"
+- "@StatusCode != 404"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "SQL_Injection"
+severity: "Critical"
+inactive: false
+policies:
+  initExec: "Request"
+  cleanupExec: "Request"
+  logger: "DEBUG"
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: "@MySQLTimeboundSQLInjections"
+  repeatDelay: 0
