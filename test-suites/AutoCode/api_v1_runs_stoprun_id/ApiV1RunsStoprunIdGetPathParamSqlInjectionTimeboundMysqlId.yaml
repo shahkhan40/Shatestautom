@@ -1,0 +1,33 @@
+---
+parent: "api_v1_runs_stoprun_id"
+name: "ApiV1RunsStoprunIdGetPathParamSqlInjectionTimeboundMysqlId"
+description: null
+type: "SUITE"
+endpoint: "/api/v1/runs/stoprun/{{@MySQLTimeboundSQLInjections}}"
+method: "GET"
+auth: "Default"
+headers:
+- "Accept: application/json"
+- "Content-Type: application/json"
+testCases: []
+assertions:
+- "@ResponseTime < 7000"
+- "@StatusCode != 404"
+tags:
+- "V1"
+authors:
+- "FX Bot"
+init: []
+cleanup: []
+category: "SQL_Injection"
+severity: "Critical"
+inactive: false
+policies:
+  initExec: "Request"
+  cleanupExec: "Request"
+  logger: "DEBUG"
+  timeoutSeconds: 300
+  repeatOnFailure: 0
+  repeat: 0
+  repeatModule: "@MySQLTimeboundSQLInjections"
+  repeatDelay: 0
